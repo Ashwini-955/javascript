@@ -12,3 +12,37 @@ console.log("multiplication result")
  }
  const res =mul(3,5)
  console.log(res)
+
+function islogin(username){
+    if(!username){
+        return `${username} is not valid, enter again`
+    }
+    return `${username} has just looged in`
+}
+console.log(islogin("Ashu"))
+console.log(islogin())// if no arguement given then it will pass undefined as parameter 
+//******************************** res operator******************************************** */
+console.log("res operator or spead operator----------------------------------------------------")
+function calculate(num1){
+    return num1
+}
+console.log(calculate(200,400,500,600)) // now this will take 200 as parameter and return 200
+
+function calculate1(...num1){ // here we use res or spead operator which will spread and bind
+    return num1                //all elements in single array 
+}
+console.log(calculate1(200,300,400,500,600,700))
+//******************************using objects in functions************************************* */
+const user ={
+    username:"ashu",
+    age:20
+}
+function info(anyobj){
+    return console.log(`Name is ${anyobj.username} and age is ${anyobj.age}`)
+}
+info(user)
+// directly pass object without creating it 
+info({
+    username:"ajay",
+    age:20
+})
