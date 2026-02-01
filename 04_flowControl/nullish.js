@@ -9,3 +9,4 @@ console.log(val2)//2 instead of null
 
 // ternary operator 
 condition? true :false
+9222100379

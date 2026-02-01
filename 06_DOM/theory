@@ -1,0 +1,13 @@
+lets understand about dom . document object manupulation
+                window
+                    |
+                documnet 
+                    |
+                  HTML
+                /    \
+            head      body
+            /  \         |- ------------------------div (attribute)
+        title   meta                               /    \
+        /         /                               h1     p
+    text node      attributes                   /    \
+                                        attribute   text node
