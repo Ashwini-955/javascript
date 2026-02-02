@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+    <script>
+        // document.getElementById('owl').onclick=function(){
+        //     alert("owl")
+        // }  this is not good method because it supports only onclick 
+        // use addEventListener because it givrs various funcionalities like click , doble key , keyboard functionalities
+        document.getElementById('owl').addEventListener('click',function(){
+             alert("owl by addEventListener")
+        },false)
+           //it is not neseccary to write true false , by default is always false . but there are some functions which 
+           //need this to be mention
+        document.getElementById('owl').addEventListener('click',function(e){
+            console.log(e); // print the event properties and all event info 
+            // this event contains various events like type , timestamp , defaultPrevent , target , toElement
+            // srcElement,currentTarget
+            //clientX,clientY
+            //altKey.ctrlKey,shiftKey...
+        },false)
+
+            // event propogation - writing false and true 
+            // it contains two context : 1. event bubbling - when it is written false
+            //  2. event capturing -when it is written true
+            //example:
+        document.getElementById('images').addEventListener('click',function(e){
+            console.log("images inside ul clicked")
+        },false)
+        document.getElementById('owl').addEventListener('click',function(e){
+            console.log("owl clicked")
+            e.preventDefault()//Stops the browser’s default action for an event.
+            e.stopPropagation() // this will not allow the other event to bubble or occur after this event
+        },false)
+        //here owl is the part of images in this case by clicking owl both events will take place 
+        // if it is false then event bubbling will take place that first inner id owl then outer div images.
+        // if it is true then event capturing will take place that is outer id then inner id
+    </script>
+</html>
