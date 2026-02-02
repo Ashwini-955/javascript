@@ -44,7 +44,7 @@ form.addEventListener('submit',function(e){
   }
 })
 ```
-```javascript project 1
+```javascript project 3
 const clock =document.getElementById('clock')
 
 setInterval(function(){
